@@ -1,0 +1,36 @@
+program test_completo;
+var x, y : int;
+z : float;
+nombre : string;
+void miFuncion(a : int, b : float)
+[ var temp : int;
+{ temp = a + b * 2;
+if (temp >= 100)
+{ print("grande"); }
+else
+{ print("chico"); };
+}
+];
+main
+{ x = 0;
+y=10;
+z = 3.14;
+nombre = "hola mundo";
+# este es un comentario
+do {
+x = x + 1;
+print(x, y, z);
+} while (x < y);
+if (x == y)
+{ print("iguales"); }
+else
+{ print("diferentes"); };
+x = 5 - 3;
+y = 10 / 2;
+if (x != y)
+{ print("distintos"); };
+if (z <= 3.14)
+{ print("ok"); };
+}
+end
+# fin del programa
