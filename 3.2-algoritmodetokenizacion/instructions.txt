@@ -1,0 +1,1 @@
+tenemos que hacer una tablita con automatasimulator, automatas por cada token son diagramas, no plaintext
