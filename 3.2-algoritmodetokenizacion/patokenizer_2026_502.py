@@ -108,47 +108,16 @@ class Tokenizer:
     # Devuelve la lista de tokens
     return self.tokens
 
-dictio_regex = {
-                'comment' : r"^#.*",
-                'cte_str' : r'^"[^"\n]*"',
-                'cte_float' : r"^[0-9]+\.[0-9]+\b",
-                'cte_int' : r"^[0-9]+\b",
-                'identifier' : r"^[a-zA-Z]\w*\b",
-                '!=' : r"^!=",
-                '==' : r"^==",
-                '>=' : r"^>=",
-                '<=' : r"^<=",
-                '>' : r"^>",
-                '<' : r"^<",
-                '=' : r"^=",
-                '+' : r"^\+",
-                '-' : r"^-",
-                '*' : r"^\*",
-                '/' : r"^/",
-                'semicol' : r"^;",
-                'colon' : r"^:",
-                'comma' : r"^,",
-                '(' : r"^\(",
-                ')' : r"^\)",
-                '{' : r"^\{",
-                '}' : r"^\}"
+dictio_regex = { 'const_int' : r"^[0-9]+\b",
+				'identifier' : r"^[a-zA-Z]\w*\b",
+				'=' : r"^=",
+				'semicol' : r"^;",
+                 '+' : r"^\+",
+                 '(' : r"^\(",
+                 ')' : r"^\)"
       }
 
-keyword_list = [
-                "program",
-                "var",
-                "int",
-                "float",
-                "string",
-                "void",
-                "main",
-                "end",
-                "print",
-                "if",
-                "else",
-                "do",
-                "while"
-]
+keyword_list = ["print" ]
 
 input_program = """
     value = 45 + 10;
