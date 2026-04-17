@@ -239,18 +239,3 @@ main {
 }
 end
 ```
-
----
-
-## Resumen
-
-El léxico de Little Duck incluye:
-
-* Palabras reservadas
-* Identificadores
-* Constantes (int, float, string)
-* Operadores aritméticos y relacionales
-* Operador de asignación
-* Delimitadores
-* Comentarios con `#`
-
