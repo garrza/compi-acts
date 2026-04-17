@@ -48,7 +48,7 @@ temp123
 ```
 cte_int
 cte_float
-cte_str
+cte_string
 ```
 
 **Ejemplos:**
@@ -97,11 +97,6 @@ Del diagrama:
 >
 <
 !=
-```
-
-(Posible extensión común aunque no todos aparecen explícitos):
-
-```
 ==
 >=
 <=
