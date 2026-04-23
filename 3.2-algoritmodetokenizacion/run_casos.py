@@ -8,10 +8,10 @@ Usage:
   python run_casos.py <folder>   # run files in specified folder
 """
 
-from pathlib import Path
 import sys
+from pathlib import Path
 
-from patokenizer import Tokenizer, regex_table, keyword_list
+from patokenizer import Tokenizer, keyword_list, regex_table
 
 
 def run_file(path: Path):
@@ -28,7 +28,7 @@ def run_file(path: Path):
             continue
         if not line_tokens and line_text.startswith("#"):
             print(f"\nLinea {line_num}:    {line_text}")
-            print(f"  (comentario)")
+            print("  (comentario)")
             continue
         if not line_tokens:
             continue
