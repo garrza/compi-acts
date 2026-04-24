@@ -101,10 +101,10 @@ Todas usan `A_ID` y despues se validan contra `reserved`.
 cd 3.3-tokenizaconply
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python lexer_little_duck.py ../3.3-tokenizaconply/casos-prueba/patoprograma.txt
+.venv/bin/python lexer_little_duck.py casos-prueba/patoprograma.txt
 ```
 
-Tambien se incluye `vendor/ply`, por lo que el lexer puede correr aunque PLY no este instalado globalmente.
+El lexer depende de `ply==3.11`, instalado desde `requirements.txt` dentro del entorno virtual local.
 
 ## Salida
 
@@ -121,7 +121,8 @@ Los errores se reportan al final con linea, columna y `lexpos`.
 
 ```bash
 .venv/bin/python -m py_compile lexer_little_duck.py
-.venv/bin/python lexer_little_duck.py ../3.3-tokenizaconply/casos-prueba/errores_test.txt
+.venv/bin/python lexer_little_duck.py casos-prueba/patoprograma.txt
+.venv/bin/python lexer_little_duck.py casos-prueba/errores_test.txt
 ```
 
 ## Fuentes

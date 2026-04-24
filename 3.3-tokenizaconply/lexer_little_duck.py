@@ -7,22 +7,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Protocol, TypedDict, cast
 
-CURRENT_DIR = Path(__file__).resolve().parent
-LOCAL_VENDOR = CURRENT_DIR / "vendor"
-
-if LOCAL_VENDOR.is_dir():
-    sys.path.insert(0, str(LOCAL_VENDOR))
-
-try:
-    import ply.lex as lex
-except ImportError as exc:  # pragma: no cover - depende del entorno
-    print(
-        "Error: no se encontro la libreria 'ply'. Instala la dependencia con "
-        "'python3 -m pip install --target vendor ply' dentro de la carpeta 3.3, "
-        "o bien con 'python3 -m pip install ply'.",
-        file=sys.stderr,
-    )
-    raise SystemExit(1) from exc
+import ply.lex as lex
 
 
 class TokenInfo(TypedDict):
