@@ -42,7 +42,6 @@ class Tokenizer:
 
     def tokenize_line(self, line, line_number):
         line_tokens = []
-        original_line = line
 
         while line:
             # Remover espacios al inicio
@@ -161,7 +160,7 @@ def main():
         if not line_tokens and line_text.startswith("#"):
             # Linea de comentario
             print(f"\nLinea {line_num}:    {line_text}")
-            print(f"  (comentario)")
+            print("  (comentario)")
             continue
         if not line_tokens:
             continue

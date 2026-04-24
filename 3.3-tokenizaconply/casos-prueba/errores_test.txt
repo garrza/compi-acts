@@ -1,0 +1,11 @@
+program errores;
+var x : int;
+main
+{ x = 10;
+x = x @ 5;
+y = 3 $ 2;
+print(x);
+z = 100 & 50;
+print("hola" ^ "mundo");
+}
+end
