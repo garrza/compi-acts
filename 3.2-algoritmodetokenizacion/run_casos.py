@@ -11,7 +11,7 @@ Usage:
 import sys
 from pathlib import Path
 
-from patokenizer import Tokenizer, keyword_list, regex_table
+from patokenizer import Tokenizer, keyword_list, print_token_results, regex_table
 
 
 def run_file(path: Path):
@@ -22,36 +22,7 @@ def run_file(path: Path):
     print("=" * 80)
     print(f"FILE: {path}")
     print("=" * 80)
-
-    for line_num, line_text, line_tokens in results:
-        if not line_tokens and not line_text:
-            continue
-        if not line_tokens and line_text.startswith("#"):
-            print(f"\nLinea {line_num}:    {line_text}")
-            print("  (comentario)")
-            continue
-        if not line_tokens:
-            continue
-
-        print(f"\nLinea {line_num}:    {line_text}")
-
-        token_list_str = ", ".join(f"('{t[0]}', '{t[1]}')" for t in line_tokens)
-        print(f"Token stream:  [ {token_list_str} ]")
-
-        max_val_len = max(len(t[1]) for t in line_tokens)
-        for token in line_tokens:
-            print(f"  {token[1]:<{max_val_len + 2}} {token[0]}")
-
-    if tokenizer.errors:
-        print("\n" + "=" * 60)
-        print("ERRORES LEXICOS")
-        print("=" * 60)
-        for error in tokenizer.errors:
-            print(f"  {error}")
-    else:
-        print("\n" + "=" * 60)
-        print("No se encontraron errores lexicos.")
-        print("=" * 60)
+    print_token_results(results, tokenizer.errors)
 
 
 def main():

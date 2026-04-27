@@ -1,0 +1,1233 @@
+================================================================================
+FILE: /Users/ramiro/Desktop/code/class-acts/compi-acts/3.2-algoritmodetokenizacion/casos-prueba/custom_test.txt
+================================================================================
+============================================================
+TOKEN STREAM
+============================================================
+
+Linea 1:    program test_completo;
+Token stream:  [ (kw_program, 'program'), (id, 'test_completo'), (semicolon, ';') ]
+  program         kw_program
+  test_completo   id
+  ;               semicolon
+
+Linea 2:    var x, y : int;
+Token stream:  [ (kw_var, 'var'), (id, 'x'), (comma, ','), (id, 'y'), (colon, ':'), (kw_int, 'int'), (semicolon, ';') ]
+  var   kw_var
+  x     id
+  ,     comma
+  y     id
+  :     colon
+  int   kw_int
+  ;     semicolon
+
+Linea 3:    z : float;
+Token stream:  [ (id, 'z'), (colon, ':'), (kw_float, 'float'), (semicolon, ';') ]
+  z       id
+  :       colon
+  float   kw_float
+  ;       semicolon
+
+Linea 4:    nombre : string;
+Token stream:  [ (id, 'nombre'), (colon, ':'), (kw_string, 'string'), (semicolon, ';') ]
+  nombre   id
+  :        colon
+  string   kw_string
+  ;        semicolon
+
+Linea 5:    void miFuncion(a : int, b : float)
+Token stream:  [ (kw_void, 'void'), (id, 'miFuncion'), (l_paren, '('), (id, 'a'), (colon, ':'), (kw_int, 'int'), (comma, ','), (id, 'b'), (colon, ':'), (kw_float, 'float'), (r_paren, ')') ]
+  void        kw_void
+  miFuncion   id
+  (           l_paren
+  a           id
+  :           colon
+  int         kw_int
+  ,           comma
+  b           id
+  :           colon
+  float       kw_float
+  )           r_paren
+
+Linea 6:    [ var temp : int;
+Token stream:  [ (l_bracket, '['), (kw_var, 'var'), (id, 'temp'), (colon, ':'), (kw_int, 'int'), (semicolon, ';') ]
+  [      l_bracket
+  var    kw_var
+  temp   id
+  :      colon
+  int    kw_int
+  ;      semicolon
+
+Linea 7:    { temp = a + b * 2;
+Token stream:  [ (l_brace, '{'), (id, 'temp'), (op_assign, '='), (id, 'a'), (op_plus, '+'), (id, 'b'), (op_times, '*'), (cte_int, '2'), (semicolon, ';') ]
+  {      l_brace
+  temp   id
+  =      op_assign
+  a      id
+  +      op_plus
+  b      id
+  *      op_times
+  2      cte_int
+  ;      semicolon
+
+Linea 8:    if (temp >= 100)
+Token stream:  [ (kw_if, 'if'), (l_paren, '('), (id, 'temp'), (op_ge, '>='), (cte_int, '100'), (r_paren, ')') ]
+  if     kw_if
+  (      l_paren
+  temp   id
+  >=     op_ge
+  100    cte_int
+  )      r_paren
+
+Linea 9:    { print("grande"); }
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"grande"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}') ]
+  {          l_brace
+  print      kw_print
+  (          l_paren
+  "grande"   cte_str
+  )          r_paren
+  ;          semicolon
+  }          r_brace
+
+Linea 10:    else
+Token stream:  [ (kw_else, 'else') ]
+  else   kw_else
+
+Linea 11:    { print("chico"); };
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"chico"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}'), (semicolon, ';') ]
+  {         l_brace
+  print     kw_print
+  (         l_paren
+  "chico"   cte_str
+  )         r_paren
+  ;         semicolon
+  }         r_brace
+  ;         semicolon
+
+Linea 12:    }
+Token stream:  [ (r_brace, '}') ]
+  }   r_brace
+
+Linea 13:    ];
+Token stream:  [ (r_bracket, ']'), (semicolon, ';') ]
+  ]   r_bracket
+  ;   semicolon
+
+Linea 14:    main
+Token stream:  [ (kw_main, 'main') ]
+  main   kw_main
+
+Linea 15:    { x = 0;
+Token stream:  [ (l_brace, '{'), (id, 'x'), (op_assign, '='), (cte_int, '0'), (semicolon, ';') ]
+  {   l_brace
+  x   id
+  =   op_assign
+  0   cte_int
+  ;   semicolon
+
+Linea 16:    y=10;
+Token stream:  [ (id, 'y'), (op_assign, '='), (cte_int, '10'), (semicolon, ';') ]
+  y    id
+  =    op_assign
+  10   cte_int
+  ;    semicolon
+
+Linea 17:    z = 3.14;
+Token stream:  [ (id, 'z'), (op_assign, '='), (cte_float, '3.14'), (semicolon, ';') ]
+  z      id
+  =      op_assign
+  3.14   cte_float
+  ;      semicolon
+
+Linea 18:    nombre = "hola mundo";
+Token stream:  [ (id, 'nombre'), (op_assign, '='), (cte_str, '"hola mundo"'), (semicolon, ';') ]
+  nombre         id
+  =              op_assign
+  "hola mundo"   cte_str
+  ;              semicolon
+
+Linea 19:    # este es un comentario
+Token stream:  [ (comment, '# este es un comentario') ]
+  # este es un comentario   comment
+
+Linea 20:    do {
+Token stream:  [ (kw_do, 'do'), (l_brace, '{') ]
+  do   kw_do
+  {    l_brace
+
+Linea 21:    x = x + 1;
+Token stream:  [ (id, 'x'), (op_assign, '='), (id, 'x'), (op_plus, '+'), (cte_int, '1'), (semicolon, ';') ]
+  x   id
+  =   op_assign
+  x   id
+  +   op_plus
+  1   cte_int
+  ;   semicolon
+
+Linea 22:    print(x, y, z);
+Token stream:  [ (kw_print, 'print'), (l_paren, '('), (id, 'x'), (comma, ','), (id, 'y'), (comma, ','), (id, 'z'), (r_paren, ')'), (semicolon, ';') ]
+  print   kw_print
+  (       l_paren
+  x       id
+  ,       comma
+  y       id
+  ,       comma
+  z       id
+  )       r_paren
+  ;       semicolon
+
+Linea 23:    } while (x < y);
+Token stream:  [ (r_brace, '}'), (kw_while, 'while'), (l_paren, '('), (id, 'x'), (op_lt, '<'), (id, 'y'), (r_paren, ')'), (semicolon, ';') ]
+  }       r_brace
+  while   kw_while
+  (       l_paren
+  x       id
+  <       op_lt
+  y       id
+  )       r_paren
+  ;       semicolon
+
+Linea 24:    if (x == y)
+Token stream:  [ (kw_if, 'if'), (l_paren, '('), (id, 'x'), (op_eq, '=='), (id, 'y'), (r_paren, ')') ]
+  if   kw_if
+  (    l_paren
+  x    id
+  ==   op_eq
+  y    id
+  )    r_paren
+
+Linea 25:    { print("iguales"); }
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"iguales"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}') ]
+  {           l_brace
+  print       kw_print
+  (           l_paren
+  "iguales"   cte_str
+  )           r_paren
+  ;           semicolon
+  }           r_brace
+
+Linea 26:    else
+Token stream:  [ (kw_else, 'else') ]
+  else   kw_else
+
+Linea 27:    { print("diferentes"); };
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"diferentes"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}'), (semicolon, ';') ]
+  {              l_brace
+  print          kw_print
+  (              l_paren
+  "diferentes"   cte_str
+  )              r_paren
+  ;              semicolon
+  }              r_brace
+  ;              semicolon
+
+Linea 28:    x = 5 - 3;
+Token stream:  [ (id, 'x'), (op_assign, '='), (cte_int, '5'), (op_minus, '-'), (cte_int, '3'), (semicolon, ';') ]
+  x   id
+  =   op_assign
+  5   cte_int
+  -   op_minus
+  3   cte_int
+  ;   semicolon
+
+Linea 29:    y = 10 / 2;
+Token stream:  [ (id, 'y'), (op_assign, '='), (cte_int, '10'), (op_divide, '/'), (cte_int, '2'), (semicolon, ';') ]
+  y    id
+  =    op_assign
+  10   cte_int
+  /    op_divide
+  2    cte_int
+  ;    semicolon
+
+Linea 30:    if (x != y)
+Token stream:  [ (kw_if, 'if'), (l_paren, '('), (id, 'x'), (op_ne, '!='), (id, 'y'), (r_paren, ')') ]
+  if   kw_if
+  (    l_paren
+  x    id
+  !=   op_ne
+  y    id
+  )    r_paren
+
+Linea 31:    { print("distintos"); };
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"distintos"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}'), (semicolon, ';') ]
+  {             l_brace
+  print         kw_print
+  (             l_paren
+  "distintos"   cte_str
+  )             r_paren
+  ;             semicolon
+  }             r_brace
+  ;             semicolon
+
+Linea 32:    if (z <= 3.14)
+Token stream:  [ (kw_if, 'if'), (l_paren, '('), (id, 'z'), (op_le, '<='), (cte_float, '3.14'), (r_paren, ')') ]
+  if     kw_if
+  (      l_paren
+  z      id
+  <=     op_le
+  3.14   cte_float
+  )      r_paren
+
+Linea 33:    { print("ok"); };
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"ok"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}'), (semicolon, ';') ]
+  {       l_brace
+  print   kw_print
+  (       l_paren
+  "ok"    cte_str
+  )       r_paren
+  ;       semicolon
+  }       r_brace
+  ;       semicolon
+
+Linea 34:    }
+Token stream:  [ (r_brace, '}') ]
+  }   r_brace
+
+Linea 35:    end
+Token stream:  [ (kw_end, 'end') ]
+  end   kw_end
+
+Linea 36:    # fin del programa
+Token stream:  [ (comment, '# fin del programa') ]
+  # fin del programa   comment
+
+============================================================
+No se encontraron errores lexicos.
+============================================================
+================================================================================
+FILE: /Users/ramiro/Desktop/code/class-acts/compi-acts/3.2-algoritmodetokenizacion/casos-prueba/errores_test.txt
+================================================================================
+============================================================
+TOKEN STREAM
+============================================================
+
+Linea 1:    program errores;
+Token stream:  [ (kw_program, 'program'), (id, 'errores'), (semicolon, ';') ]
+  program   kw_program
+  errores   id
+  ;         semicolon
+
+Linea 2:    var x : int;
+Token stream:  [ (kw_var, 'var'), (id, 'x'), (colon, ':'), (kw_int, 'int'), (semicolon, ';') ]
+  var   kw_var
+  x     id
+  :     colon
+  int   kw_int
+  ;     semicolon
+
+Linea 3:    main
+Token stream:  [ (kw_main, 'main') ]
+  main   kw_main
+
+Linea 4:    { x = 10;
+Token stream:  [ (l_brace, '{'), (id, 'x'), (op_assign, '='), (cte_int, '10'), (semicolon, ';') ]
+  {    l_brace
+  x    id
+  =    op_assign
+  10   cte_int
+  ;    semicolon
+
+Linea 5:    x = x @ 5;
+Token stream:  [ (id, 'x'), (op_assign, '='), (id, 'x'), (cte_int, '5'), (semicolon, ';') ]
+  x   id
+  =   op_assign
+  x   id
+  5   cte_int
+  ;   semicolon
+
+Linea 6:    y = 3 $ 2;
+Token stream:  [ (id, 'y'), (op_assign, '='), (cte_int, '3'), (cte_int, '2'), (semicolon, ';') ]
+  y   id
+  =   op_assign
+  3   cte_int
+  2   cte_int
+  ;   semicolon
+
+Linea 7:    print(x);
+Token stream:  [ (kw_print, 'print'), (l_paren, '('), (id, 'x'), (r_paren, ')'), (semicolon, ';') ]
+  print   kw_print
+  (       l_paren
+  x       id
+  )       r_paren
+  ;       semicolon
+
+Linea 8:    z = 100 & 50;
+Token stream:  [ (id, 'z'), (op_assign, '='), (cte_int, '100'), (cte_int, '50'), (semicolon, ';') ]
+  z     id
+  =     op_assign
+  100   cte_int
+  50    cte_int
+  ;     semicolon
+
+Linea 9:    print("hola" ^ "mundo");
+Token stream:  [ (kw_print, 'print'), (l_paren, '('), (cte_str, '"hola"'), (cte_str, '"mundo"'), (r_paren, ')'), (semicolon, ';') ]
+  print     kw_print
+  (         l_paren
+  "hola"    cte_str
+  "mundo"   cte_str
+  )         r_paren
+  ;         semicolon
+
+Linea 10:    }
+Token stream:  [ (r_brace, '}') ]
+  }   r_brace
+
+Linea 11:    end
+Token stream:  [ (kw_end, 'end') ]
+  end   kw_end
+
+============================================================
+ERRORES LEXICOS
+============================================================
+  Error lexico en linea 5, columna 7: simbolo no reconocido '@'
+  Error lexico en linea 6, columna 7: simbolo no reconocido '$'
+  Error lexico en linea 8, columna 9: simbolo no reconocido '&'
+  Error lexico en linea 9, columna 14: simbolo no reconocido '^'
+================================================================================
+FILE: /Users/ramiro/Desktop/code/class-acts/compi-acts/3.2-algoritmodetokenizacion/casos-prueba/factorial.txt
+================================================================================
+============================================================
+TOKEN STREAM
+============================================================
+
+Linea 1:    program proquacks;
+Token stream:  [ (kw_program, 'program'), (id, 'proquacks'), (semicolon, ';') ]
+  program     kw_program
+  proquacks   id
+  ;           semicolon
+
+Linea 2:    var n : int ;
+Token stream:  [ (kw_var, 'var'), (id, 'n'), (colon, ':'), (kw_int, 'int'), (semicolon, ';') ]
+  var   kw_var
+  n     id
+  :     colon
+  int   kw_int
+  ;     semicolon
+
+Linea 3:    j , i : float;
+Token stream:  [ (id, 'j'), (comma, ','), (id, 'i'), (colon, ':'), (kw_float, 'float'), (semicolon, ';') ]
+  j       id
+  ,       comma
+  i       id
+  :       colon
+  float   kw_float
+  ;       semicolon
+
+Linea 4:    s : string;
+Token stream:  [ (id, 's'), (colon, ':'), (kw_string, 'string'), (semicolon, ';') ]
+  s        id
+  :        colon
+  string   kw_string
+  ;        semicolon
+
+Linea 5:    void fact (n : int, a : int)
+Token stream:  [ (kw_void, 'void'), (id, 'fact'), (l_paren, '('), (id, 'n'), (colon, ':'), (kw_int, 'int'), (comma, ','), (id, 'a'), (colon, ':'), (kw_int, 'int'), (r_paren, ')') ]
+  void   kw_void
+  fact   id
+  (      l_paren
+  n      id
+  :      colon
+  int    kw_int
+  ,      comma
+  a      id
+  :      colon
+  int    kw_int
+  )      r_paren
+
+Linea 6:    [ var b : int;
+Token stream:  [ (l_bracket, '['), (kw_var, 'var'), (id, 'b'), (colon, ':'), (kw_int, 'int'), (semicolon, ';') ]
+  [     l_bracket
+  var   kw_var
+  b     id
+  :     colon
+  int   kw_int
+  ;     semicolon
+
+Linea 7:    { if (n > 1 )
+Token stream:  [ (l_brace, '{'), (kw_if, 'if'), (l_paren, '('), (id, 'n'), (op_gt, '>'), (cte_int, '1'), (r_paren, ')') ]
+  {    l_brace
+  if   kw_if
+  (    l_paren
+  n    id
+  >    op_gt
+  1    cte_int
+  )    r_paren
+
+Linea 8:    { b = a * n;
+Token stream:  [ (l_brace, '{'), (id, 'b'), (op_assign, '='), (id, 'a'), (op_times, '*'), (id, 'n'), (semicolon, ';') ]
+  {   l_brace
+  b   id
+  =   op_assign
+  a   id
+  *   op_times
+  n   id
+  ;   semicolon
+
+Linea 9:    fact (n-1, b);
+Token stream:  [ (id, 'fact'), (l_paren, '('), (id, 'n'), (op_minus, '-'), (cte_int, '1'), (comma, ','), (id, 'b'), (r_paren, ')'), (semicolon, ';') ]
+  fact   id
+  (      l_paren
+  n      id
+  -      op_minus
+  1      cte_int
+  ,      comma
+  b      id
+  )      r_paren
+  ;      semicolon
+
+Linea 10:    }
+Token stream:  [ (r_brace, '}') ]
+  }   r_brace
+
+Linea 11:    else
+Token stream:  [ (kw_else, 'else') ]
+  else   kw_else
+
+Linea 12:    { print(a); };
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (id, 'a'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}'), (semicolon, ';') ]
+  {       l_brace
+  print   kw_print
+  (       l_paren
+  a       id
+  )       r_paren
+  ;       semicolon
+  }       r_brace
+  ;       semicolon
+
+Linea 13:    }
+Token stream:  [ (r_brace, '}') ]
+  }   r_brace
+
+Linea 14:    ];
+Token stream:  [ (r_bracket, ']'), (semicolon, ';') ]
+  ]   r_bracket
+  ;   semicolon
+
+Linea 15:    void some_other( n : int )
+Token stream:  [ (kw_void, 'void'), (id, 'some_other'), (l_paren, '('), (id, 'n'), (colon, ':'), (kw_int, 'int'), (r_paren, ')') ]
+  void         kw_void
+  some_other   id
+  (            l_paren
+  n            id
+  :            colon
+  int          kw_int
+  )            r_paren
+
+Linea 16:    [ var n : float;
+Token stream:  [ (l_bracket, '['), (kw_var, 'var'), (id, 'n'), (colon, ':'), (kw_float, 'float'), (semicolon, ';') ]
+  [       l_bracket
+  var     kw_var
+  n       id
+  :       colon
+  float   kw_float
+  ;       semicolon
+
+Linea 17:    { n = "woooooooooo 5";
+Token stream:  [ (l_brace, '{'), (id, 'n'), (op_assign, '='), (cte_str, '"woooooooooo 5"'), (semicolon, ';') ]
+  {                 l_brace
+  n                 id
+  =                 op_assign
+  "woooooooooo 5"   cte_str
+  ;                 semicolon
+
+Linea 18:    print("hello ");
+Token stream:  [ (kw_print, 'print'), (l_paren, '('), (cte_str, '"hello "'), (r_paren, ')'), (semicolon, ';') ]
+  print      kw_print
+  (          l_paren
+  "hello "   cte_str
+  )          r_paren
+  ;          semicolon
+
+Linea 19:    xf = 7;
+Token stream:  [ (id, 'xf'), (op_assign, '='), (cte_int, '7'), (semicolon, ';') ]
+  xf   id
+  =    op_assign
+  7    cte_int
+  ;    semicolon
+
+Linea 20:    fact(3, 1);
+Token stream:  [ (id, 'fact'), (l_paren, '('), (cte_int, '3'), (comma, ','), (cte_int, '1'), (r_paren, ')'), (semicolon, ';') ]
+  fact   id
+  (      l_paren
+  3      cte_int
+  ,      comma
+  1      cte_int
+  )      r_paren
+  ;      semicolon
+
+Linea 21:    } ]
+Token stream:  [ (r_brace, '}'), (r_bracket, ']') ]
+  }   r_brace
+  ]   r_bracket
+
+Linea 22:    ;
+Token stream:  [ (semicolon, ';') ]
+  ;   semicolon
+
+Linea 23:    main
+Token stream:  [ (kw_main, 'main') ]
+  main   kw_main
+
+Linea 24:    { n = 5;
+Token stream:  [ (l_brace, '{'), (id, 'n'), (op_assign, '='), (cte_int, '5'), (semicolon, ';') ]
+  {   l_brace
+  n   id
+  =   op_assign
+  5   cte_int
+  ;   semicolon
+
+Linea 25:    fact(n, 1);
+Token stream:  [ (id, 'fact'), (l_paren, '('), (id, 'n'), (comma, ','), (cte_int, '1'), (r_paren, ')'), (semicolon, ';') ]
+  fact   id
+  (      l_paren
+  n      id
+  ,      comma
+  1      cte_int
+  )      r_paren
+  ;      semicolon
+
+Linea 26:    fact(n+1, 1);
+Token stream:  [ (id, 'fact'), (l_paren, '('), (id, 'n'), (op_plus, '+'), (cte_int, '1'), (comma, ','), (cte_int, '1'), (r_paren, ')'), (semicolon, ';') ]
+  fact   id
+  (      l_paren
+  n      id
+  +      op_plus
+  1      cte_int
+  ,      comma
+  1      cte_int
+  )      r_paren
+  ;      semicolon
+
+Linea 27:    do {
+Token stream:  [ (kw_do, 'do'), (l_brace, '{') ]
+  do   kw_do
+  {    l_brace
+
+Linea 28:    print(3, "w", 4+5, 4.5);
+Token stream:  [ (kw_print, 'print'), (l_paren, '('), (cte_int, '3'), (comma, ','), (cte_str, '"w"'), (comma, ','), (cte_int, '4'), (op_plus, '+'), (cte_int, '5'), (comma, ','), (cte_float, '4.5'), (r_paren, ')'), (semicolon, ';') ]
+  print   kw_print
+  (       l_paren
+  3       cte_int
+  ,       comma
+  "w"     cte_str
+  ,       comma
+  4       cte_int
+  +       op_plus
+  5       cte_int
+  ,       comma
+  4.5     cte_float
+  )       r_paren
+  ;       semicolon
+
+Linea 29:    }while( 3 < 5 / 1.5 );
+Token stream:  [ (r_brace, '}'), (kw_while, 'while'), (l_paren, '('), (cte_int, '3'), (op_lt, '<'), (cte_int, '5'), (op_divide, '/'), (cte_float, '1.5'), (r_paren, ')'), (semicolon, ';') ]
+  }       r_brace
+  while   kw_while
+  (       l_paren
+  3       cte_int
+  <       op_lt
+  5       cte_int
+  /       op_divide
+  1.5     cte_float
+  )       r_paren
+  ;       semicolon
+
+Linea 30:    if ( 3 >= 8)
+Token stream:  [ (kw_if, 'if'), (l_paren, '('), (cte_int, '3'), (op_ge, '>='), (cte_int, '8'), (r_paren, ')') ]
+  if   kw_if
+  (    l_paren
+  3    cte_int
+  >=   op_ge
+  8    cte_int
+  )    r_paren
+
+Linea 31:    {
+Token stream:  [ (l_brace, '{') ]
+  {   l_brace
+
+Linea 32:    print("texto ");
+Token stream:  [ (kw_print, 'print'), (l_paren, '('), (cte_str, '"texto "'), (r_paren, ')'), (semicolon, ';') ]
+  print      kw_print
+  (          l_paren
+  "texto "   cte_str
+  )          r_paren
+  ;          semicolon
+
+Linea 33:    n = 58 + 9 * 5;
+Token stream:  [ (id, 'n'), (op_assign, '='), (cte_int, '58'), (op_plus, '+'), (cte_int, '9'), (op_times, '*'), (cte_int, '5'), (semicolon, ';') ]
+  n    id
+  =    op_assign
+  58   cte_int
+  +    op_plus
+  9    cte_int
+  *    op_times
+  5    cte_int
+  ;    semicolon
+
+Linea 34:    }
+Token stream:  [ (r_brace, '}') ]
+  }   r_brace
+
+Linea 35:    else
+Token stream:  [ (kw_else, 'else') ]
+  else   kw_else
+
+Linea 36:    { print("xsxsxs", (5) );
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"xsxsxs"'), (comma, ','), (l_paren, '('), (cte_int, '5'), (r_paren, ')'), (r_paren, ')'), (semicolon, ';') ]
+  {          l_brace
+  print      kw_print
+  (          l_paren
+  "xsxsxs"   cte_str
+  ,          comma
+  (          l_paren
+  5          cte_int
+  )          r_paren
+  )          r_paren
+  ;          semicolon
+
+Linea 37:    };
+Token stream:  [ (r_brace, '}'), (semicolon, ';') ]
+  }   r_brace
+  ;   semicolon
+
+Linea 38:    }
+Token stream:  [ (r_brace, '}') ]
+  }   r_brace
+
+Linea 39:    end
+Token stream:  [ (kw_end, 'end') ]
+  end   kw_end
+
+============================================================
+No se encontraron errores lexicos.
+============================================================
+================================================================================
+FILE: /Users/ramiro/Desktop/code/class-acts/compi-acts/3.2-algoritmodetokenizacion/casos-prueba/lexico.txt
+================================================================================
+============================================================
+TOKEN STREAM
+============================================================
+
+Linea 1:    program main var end
+Token stream:  [ (kw_program, 'program'), (kw_main, 'main'), (kw_var, 'var'), (kw_end, 'end') ]
+  program   kw_program
+  main      kw_main
+  var       kw_var
+  end       kw_end
+
+Linea 2:    int float string void
+Token stream:  [ (kw_int, 'int'), (kw_float, 'float'), (kw_string, 'string'), (kw_void, 'void') ]
+  int      kw_int
+  float    kw_float
+  string   kw_string
+  void     kw_void
+
+Linea 3:    if else do while print
+Token stream:  [ (kw_if, 'if'), (kw_else, 'else'), (kw_do, 'do'), (kw_while, 'while'), (kw_print, 'print') ]
+  if      kw_if
+  else    kw_else
+  do      kw_do
+  while   kw_while
+  print   kw_print
+
+Linea 4:    var_so var_87 waaa id_7
+Token stream:  [ (id, 'var_so'), (id, 'var_87'), (id, 'waaa'), (id, 'id_7') ]
+  var_so   id
+  var_87   id
+  waaa     id
+  id_7     id
+
+Linea 5:    4 & 5 6 7
+Token stream:  [ (cte_int, '4'), (cte_int, '5'), (cte_int, '6'), (cte_int, '7') ]
+  4   cte_int
+  5   cte_int
+  6   cte_int
+  7   cte_int
+
+Linea 6:    , ; :
+Token stream:  [ (comma, ','), (semicolon, ';'), (colon, ':') ]
+  ,   comma
+  ;   semicolon
+  :   colon
+
+Linea 7:    { } [ ] ( )
+Token stream:  [ (l_brace, '{'), (r_brace, '}'), (l_bracket, '['), (r_bracket, ']'), (l_paren, '('), (r_paren, ')') ]
+  {   l_brace
+  }   r_brace
+  [   l_bracket
+  ]   r_bracket
+  (   l_paren
+  )   r_paren
+
+Linea 8:    1 7879 125.848 2.56 "78" "5.16" "cadenita" "cade #"
+Token stream:  [ (cte_int, '1'), (cte_int, '7879'), (cte_float, '125.848'), (cte_float, '2.56'), (cte_str, '"78"'), (cte_str, '"5.16"'), (cte_str, '"cadenita"'), (cte_str, '"cade #"') ]
+  1            cte_int
+  7879         cte_int
+  125.848      cte_float
+  2.56         cte_float
+  "78"         cte_str
+  "5.16"       cte_str
+  "cadenita"   cte_str
+  "cade #"     cte_str
+
+Linea 9:    #1 2.56 "cadenita en comment" 7879 125.848 "78"
+Token stream:  [ (comment, '#1 2.56 "cadenita en comment" 7879 125.848 "78"') ]
+  #1 2.56 "cadenita en comment" 7879 125.848 "78"   comment
+
+Linea 10:    18 !! % 24
+Token stream:  [ (cte_int, '18'), (cte_int, '24') ]
+  18   cte_int
+  24   cte_int
+
+Linea 11:    +-*/= == 3>=3 5<=5 != < >
+Token stream:  [ (op_plus, '+'), (op_minus, '-'), (op_times, '*'), (op_divide, '/'), (op_assign, '='), (op_eq, '=='), (cte_int, '3'), (op_ge, '>='), (cte_int, '3'), (cte_int, '5'), (op_le, '<='), (cte_int, '5'), (op_ne, '!='), (op_lt, '<'), (op_gt, '>') ]
+  +    op_plus
+  -    op_minus
+  *    op_times
+  /    op_divide
+  =    op_assign
+  ==   op_eq
+  3    cte_int
+  >=   op_ge
+  3    cte_int
+  5    cte_int
+  <=   op_le
+  5    cte_int
+  !=   op_ne
+  <    op_lt
+  >    op_gt
+
+============================================================
+ERRORES LEXICOS
+============================================================
+  Error lexico en linea 5, columna 3: simbolo no reconocido '&'
+  Error lexico en linea 10, columna 4: simbolo no reconocido '!'
+  Error lexico en linea 10, columna 5: simbolo no reconocido '!'
+  Error lexico en linea 10, columna 7: simbolo no reconocido '%'
+================================================================================
+FILE: /Users/ramiro/Desktop/code/class-acts/compi-acts/3.2-algoritmodetokenizacion/casos-prueba/lexico_extendido.txt
+================================================================================
+============================================================
+TOKEN STREAM
+============================================================
+
+Linea 1:    # Caso propio: cobertura completa del lexico de Little Duck
+Token stream:  [ (comment, '# Caso propio: cobertura completa del lexico de Little Duck') ]
+  # Caso propio: cobertura completa del lexico de Little Duck   comment
+
+Linea 2:    program cobertura_total;
+Token stream:  [ (kw_program, 'program'), (id, 'cobertura_total'), (semicolon, ';') ]
+  program           kw_program
+  cobertura_total   id
+  ;                 semicolon
+
+Linea 3:    var entero, otro : int;
+Token stream:  [ (kw_var, 'var'), (id, 'entero'), (comma, ','), (id, 'otro'), (colon, ':'), (kw_int, 'int'), (semicolon, ';') ]
+  var      kw_var
+  entero   id
+  ,        comma
+  otro     id
+  :        colon
+  int      kw_int
+  ;        semicolon
+
+Linea 4:    decimal : float;
+Token stream:  [ (id, 'decimal'), (colon, ':'), (kw_float, 'float'), (semicolon, ';') ]
+  decimal   id
+  :         colon
+  float     kw_float
+  ;         semicolon
+
+Linea 5:    mensaje : string;
+Token stream:  [ (id, 'mensaje'), (colon, ':'), (kw_string, 'string'), (semicolon, ';') ]
+  mensaje   id
+  :         colon
+  string    kw_string
+  ;         semicolon
+
+Linea 6:    void calcula(valor : int, factor : float)
+Token stream:  [ (kw_void, 'void'), (id, 'calcula'), (l_paren, '('), (id, 'valor'), (colon, ':'), (kw_int, 'int'), (comma, ','), (id, 'factor'), (colon, ':'), (kw_float, 'float'), (r_paren, ')') ]
+  void      kw_void
+  calcula   id
+  (         l_paren
+  valor     id
+  :         colon
+  int       kw_int
+  ,         comma
+  factor    id
+  :         colon
+  float     kw_float
+  )         r_paren
+
+Linea 7:    [ var temporal : int;
+Token stream:  [ (l_bracket, '['), (kw_var, 'var'), (id, 'temporal'), (colon, ':'), (kw_int, 'int'), (semicolon, ';') ]
+  [          l_bracket
+  var        kw_var
+  temporal   id
+  :          colon
+  int        kw_int
+  ;          semicolon
+
+Linea 8:    { temporal = valor * 2 + 3 / 1 - 4;
+Token stream:  [ (l_brace, '{'), (id, 'temporal'), (op_assign, '='), (id, 'valor'), (op_times, '*'), (cte_int, '2'), (op_plus, '+'), (cte_int, '3'), (op_divide, '/'), (cte_int, '1'), (op_minus, '-'), (cte_int, '4'), (semicolon, ';') ]
+  {          l_brace
+  temporal   id
+  =          op_assign
+  valor      id
+  *          op_times
+  2          cte_int
+  +          op_plus
+  3          cte_int
+  /          op_divide
+  1          cte_int
+  -          op_minus
+  4          cte_int
+  ;          semicolon
+
+Linea 9:    if (temporal >= 10)
+Token stream:  [ (kw_if, 'if'), (l_paren, '('), (id, 'temporal'), (op_ge, '>='), (cte_int, '10'), (r_paren, ')') ]
+  if         kw_if
+  (          l_paren
+  temporal   id
+  >=         op_ge
+  10         cte_int
+  )          r_paren
+
+Linea 10:    { print("mayor", temporal); }
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"mayor"'), (comma, ','), (id, 'temporal'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}') ]
+  {          l_brace
+  print      kw_print
+  (          l_paren
+  "mayor"    cte_str
+  ,          comma
+  temporal   id
+  )          r_paren
+  ;          semicolon
+  }          r_brace
+
+Linea 11:    else
+Token stream:  [ (kw_else, 'else') ]
+  else   kw_else
+
+Linea 12:    { print("menor"); };
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"menor"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}'), (semicolon, ';') ]
+  {         l_brace
+  print     kw_print
+  (         l_paren
+  "menor"   cte_str
+  )         r_paren
+  ;         semicolon
+  }         r_brace
+  ;         semicolon
+
+Linea 13:    }
+Token stream:  [ (r_brace, '}') ]
+  }   r_brace
+
+Linea 14:    ];
+Token stream:  [ (r_bracket, ']'), (semicolon, ';') ]
+  ]   r_bracket
+  ;   semicolon
+
+Linea 15:    main
+Token stream:  [ (kw_main, 'main') ]
+  main   kw_main
+
+Linea 16:    { entero=1;
+Token stream:  [ (l_brace, '{'), (id, 'entero'), (op_assign, '='), (cte_int, '1'), (semicolon, ';') ]
+  {        l_brace
+  entero   id
+  =        op_assign
+  1        cte_int
+  ;        semicolon
+
+Linea 17:    otro = 2;
+Token stream:  [ (id, 'otro'), (op_assign, '='), (cte_int, '2'), (semicolon, ';') ]
+  otro   id
+  =      op_assign
+  2      cte_int
+  ;      semicolon
+
+Linea 18:    decimal = 3.5;
+Token stream:  [ (id, 'decimal'), (op_assign, '='), (cte_float, '3.5'), (semicolon, ';') ]
+  decimal   id
+  =         op_assign
+  3.5       cte_float
+  ;         semicolon
+
+Linea 19:    mensaje = "texto con # interno";
+Token stream:  [ (id, 'mensaje'), (op_assign, '='), (cte_str, '"texto con # interno"'), (semicolon, ';') ]
+  mensaje                 id
+  =                       op_assign
+  "texto con # interno"   cte_str
+  ;                       semicolon
+
+Linea 20:    print(mensaje, entero, decimal);
+Token stream:  [ (kw_print, 'print'), (l_paren, '('), (id, 'mensaje'), (comma, ','), (id, 'entero'), (comma, ','), (id, 'decimal'), (r_paren, ')'), (semicolon, ';') ]
+  print     kw_print
+  (         l_paren
+  mensaje   id
+  ,         comma
+  entero    id
+  ,         comma
+  decimal   id
+  )         r_paren
+  ;         semicolon
+
+Linea 21:    if (entero == otro)
+Token stream:  [ (kw_if, 'if'), (l_paren, '('), (id, 'entero'), (op_eq, '=='), (id, 'otro'), (r_paren, ')') ]
+  if       kw_if
+  (        l_paren
+  entero   id
+  ==       op_eq
+  otro     id
+  )        r_paren
+
+Linea 22:    { print("igual"); }
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"igual"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}') ]
+  {         l_brace
+  print     kw_print
+  (         l_paren
+  "igual"   cte_str
+  )         r_paren
+  ;         semicolon
+  }         r_brace
+
+Linea 23:    else
+Token stream:  [ (kw_else, 'else') ]
+  else   kw_else
+
+Linea 24:    { print("distinto"); };
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"distinto"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}'), (semicolon, ';') ]
+  {            l_brace
+  print        kw_print
+  (            l_paren
+  "distinto"   cte_str
+  )            r_paren
+  ;            semicolon
+  }            r_brace
+  ;            semicolon
+
+Linea 25:    if (entero != otro)
+Token stream:  [ (kw_if, 'if'), (l_paren, '('), (id, 'entero'), (op_ne, '!='), (id, 'otro'), (r_paren, ')') ]
+  if       kw_if
+  (        l_paren
+  entero   id
+  !=       op_ne
+  otro     id
+  )        r_paren
+
+Linea 26:    { print("no igual"); };
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"no igual"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}'), (semicolon, ';') ]
+  {            l_brace
+  print        kw_print
+  (            l_paren
+  "no igual"   cte_str
+  )            r_paren
+  ;            semicolon
+  }            r_brace
+  ;            semicolon
+
+Linea 27:    if (entero <= otro)
+Token stream:  [ (kw_if, 'if'), (l_paren, '('), (id, 'entero'), (op_le, '<='), (id, 'otro'), (r_paren, ')') ]
+  if       kw_if
+  (        l_paren
+  entero   id
+  <=       op_le
+  otro     id
+  )        r_paren
+
+Linea 28:    { print("menor o igual"); };
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"menor o igual"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}'), (semicolon, ';') ]
+  {                 l_brace
+  print             kw_print
+  (                 l_paren
+  "menor o igual"   cte_str
+  )                 r_paren
+  ;                 semicolon
+  }                 r_brace
+  ;                 semicolon
+
+Linea 29:    if (otro > entero)
+Token stream:  [ (kw_if, 'if'), (l_paren, '('), (id, 'otro'), (op_gt, '>'), (id, 'entero'), (r_paren, ')') ]
+  if       kw_if
+  (        l_paren
+  otro     id
+  >        op_gt
+  entero   id
+  )        r_paren
+
+Linea 30:    { print("mayor"); };
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"mayor"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}'), (semicolon, ';') ]
+  {         l_brace
+  print     kw_print
+  (         l_paren
+  "mayor"   cte_str
+  )         r_paren
+  ;         semicolon
+  }         r_brace
+  ;         semicolon
+
+Linea 31:    if (entero < otro)
+Token stream:  [ (kw_if, 'if'), (l_paren, '('), (id, 'entero'), (op_lt, '<'), (id, 'otro'), (r_paren, ')') ]
+  if       kw_if
+  (        l_paren
+  entero   id
+  <        op_lt
+  otro     id
+  )        r_paren
+
+Linea 32:    { print("menor"); };
+Token stream:  [ (l_brace, '{'), (kw_print, 'print'), (l_paren, '('), (cte_str, '"menor"'), (r_paren, ')'), (semicolon, ';'), (r_brace, '}'), (semicolon, ';') ]
+  {         l_brace
+  print     kw_print
+  (         l_paren
+  "menor"   cte_str
+  )         r_paren
+  ;         semicolon
+  }         r_brace
+  ;         semicolon
+
+Linea 33:    do {
+Token stream:  [ (kw_do, 'do'), (l_brace, '{') ]
+  do   kw_do
+  {    l_brace
+
+Linea 34:    entero = entero + 1;
+Token stream:  [ (id, 'entero'), (op_assign, '='), (id, 'entero'), (op_plus, '+'), (cte_int, '1'), (semicolon, ';') ]
+  entero   id
+  =        op_assign
+  entero   id
+  +        op_plus
+  1        cte_int
+  ;        semicolon
+
+Linea 35:    } while (entero <= 5);
+Token stream:  [ (r_brace, '}'), (kw_while, 'while'), (l_paren, '('), (id, 'entero'), (op_le, '<='), (cte_int, '5'), (r_paren, ')'), (semicolon, ';') ]
+  }        r_brace
+  while    kw_while
+  (        l_paren
+  entero   id
+  <=       op_le
+  5        cte_int
+  )        r_paren
+  ;        semicolon
+
+Linea 36:    calcula(entero, decimal);
+Token stream:  [ (id, 'calcula'), (l_paren, '('), (id, 'entero'), (comma, ','), (id, 'decimal'), (r_paren, ')'), (semicolon, ';') ]
+  calcula   id
+  (         l_paren
+  entero    id
+  ,         comma
+  decimal   id
+  )         r_paren
+  ;         semicolon
+
+Linea 37:    }
+Token stream:  [ (r_brace, '}') ]
+  }   r_brace
+
+Linea 38:    end
+Token stream:  [ (kw_end, 'end') ]
+  end   kw_end
+
+Linea 39:    # comentario final
+Token stream:  [ (comment, '# comentario final') ]
+  # comentario final   comment
+
+============================================================
+No se encontraron errores lexicos.
+============================================================
+================================================================================
+FILE: /Users/ramiro/Desktop/code/class-acts/compi-acts/3.2-algoritmodetokenizacion/casos-prueba/patoprograma.txt
+================================================================================
+============================================================
+TOKEN STREAM
+============================================================
+
+Linea 1:    program tabla_de_2;
+Token stream:  [ (kw_program, 'program'), (id, 'tabla_de_2'), (semicolon, ';') ]
+  program      kw_program
+  tabla_de_2   id
+  ;            semicolon
+
+Linea 2:    var i, acumulador : int;
+Token stream:  [ (kw_var, 'var'), (id, 'i'), (comma, ','), (id, 'acumulador'), (colon, ':'), (kw_int, 'int'), (semicolon, ';') ]
+  var          kw_var
+  i            id
+  ,            comma
+  acumulador   id
+  :            colon
+  int          kw_int
+  ;            semicolon
+
+Linea 3:    main {
+Token stream:  [ (kw_main, 'main'), (l_brace, '{') ]
+  main   kw_main
+  {      l_brace
+
+Linea 4:    i = 1;
+Token stream:  [ (id, 'i'), (op_assign, '='), (cte_int, '1'), (semicolon, ';') ]
+  i   id
+  =   op_assign
+  1   cte_int
+  ;   semicolon
+
+Linea 5:    acumulador = 0;
+Token stream:  [ (id, 'acumulador'), (op_assign, '='), (cte_int, '0'), (semicolon, ';') ]
+  acumulador   id
+  =            op_assign
+  0            cte_int
+  ;            semicolon
+
+Linea 6:    do {
+Token stream:  [ (kw_do, 'do'), (l_brace, '{') ]
+  do   kw_do
+  {    l_brace
+
+Linea 7:    acumulador = acumulador + 2;
+Token stream:  [ (id, 'acumulador'), (op_assign, '='), (id, 'acumulador'), (op_plus, '+'), (cte_int, '2'), (semicolon, ';') ]
+  acumulador   id
+  =            op_assign
+  acumulador   id
+  +            op_plus
+  2            cte_int
+  ;            semicolon
+
+Linea 8:    print( acumulador )
+Token stream:  [ (kw_print, 'print'), (l_paren, '('), (id, 'acumulador'), (r_paren, ')') ]
+  print        kw_print
+  (            l_paren
+  acumulador   id
+  )            r_paren
+
+Linea 9:    } while (i < 11);
+Token stream:  [ (r_brace, '}'), (kw_while, 'while'), (l_paren, '('), (id, 'i'), (op_lt, '<'), (cte_int, '11'), (r_paren, ')'), (semicolon, ';') ]
+  }       r_brace
+  while   kw_while
+  (       l_paren
+  i       id
+  <       op_lt
+  11      cte_int
+  )       r_paren
+  ;       semicolon
+
+Linea 10:    }
+Token stream:  [ (r_brace, '}') ]
+  }   r_brace
+
+Linea 11:    end
+Token stream:  [ (kw_end, 'end') ]
+  end   kw_end
+
+Linea 12:    # un patoprograma de ejemplo
+Token stream:  [ (comment, '# un patoprograma de ejemplo') ]
+  # un patoprograma de ejemplo   comment
+
+Linea 13:    # quack!
+Token stream:  [ (comment, '# quack!') ]
+  # quack!   comment
+
+============================================================
+No se encontraron errores lexicos.
+============================================================

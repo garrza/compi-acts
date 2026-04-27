@@ -1,48 +1,39 @@
-program main var end return
-int float string char void
-if else do while for switch case default break continue
-print read write input output
-true false null
-
-# Identificadores (válidos e inválidos según la regex del tokenizer)
-a abc varName var_1 varSo varSo2 var1234 id_7
-_underscoreShouldNotMatch 9startswithdigit
-
-# Números enteros y decimales
-0 00 0123 123 9876543210
-3.14 0.001 125.848 2.56 .5 5. 5.0
-1e10 2.5e-3 6E+4 7e-02
-
-# Strings y char literals
-"hola" "cadena con espacios" "cadena \"con comillas\""
-'c' 'a' "" "cadena con \n nueva línea"
-
-# Operadores aritméticos y lógicos
- + - * / % ++ -- += -= *= /=
-= == != > < >= <= && || !
-
-# Separadores y puntuación
-, ; : . .. ... -> ->>
-{ } [ ] ( )
-
-# Comentarios
-// este es un comentario en una línea
-/* comentario
-multilinea */
-# comentario estilo shell
-
-# Caracteres especiales y casos inválidos
-@ $ € ¬ ~ ` ^ & | \\
-!! ?? ## @@
-
-# Casos para longest-match (ambigüedades)
-=== == ==
->= => >
-<= =< <
-!= ! ==
-
-# Ejemplos de pequeñas sentencias
-int x = 10;
-float y = 3.14;
-string s = "hola mundo";
-if (x>=10) { print(s); }
+# Caso propio: cobertura completa del lexico de Little Duck
+program cobertura_total;
+var entero, otro : int;
+decimal : float;
+mensaje : string;
+void calcula(valor : int, factor : float)
+[ var temporal : int;
+{ temporal = valor * 2 + 3 / 1 - 4;
+if (temporal >= 10)
+{ print("mayor", temporal); }
+else
+{ print("menor"); };
+}
+];
+main
+{ entero=1;
+otro = 2;
+decimal = 3.5;
+mensaje = "texto con # interno";
+print(mensaje, entero, decimal);
+if (entero == otro)
+{ print("igual"); }
+else
+{ print("distinto"); };
+if (entero != otro)
+{ print("no igual"); };
+if (entero <= otro)
+{ print("menor o igual"); };
+if (otro > entero)
+{ print("mayor"); };
+if (entero < otro)
+{ print("menor"); };
+do {
+entero = entero + 1;
+} while (entero <= 5);
+calcula(entero, decimal);
+}
+end
+# comentario final
