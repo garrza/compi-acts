@@ -1,0 +1,4 @@
+x = 14 + (contador * 2);
+total = precio / 2.5 - descuento;
+bandera = total >= limite;
+promedio = (a + b) / 2.0;
