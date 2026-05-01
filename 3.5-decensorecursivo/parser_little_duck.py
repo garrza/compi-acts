@@ -312,7 +312,17 @@ def main(argv: list[str]) -> int:
         print(f"Error: no se encontro el archivo {source_path}", file=sys.stderr)
         return 2
 
-    return print_report(source_path.read_text(encoding="utf-8"))
+    lines = [
+        line
+        for line in source_path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    last_result = 0
+    for line in lines:
+        print("=" * 64)
+        print(line)
+        last_result = print_report(line)
+    return last_result
 
 
 if __name__ == "__main__":
