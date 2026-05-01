@@ -302,29 +302,7 @@ def print_report(source: str) -> int:
     return 0
 
 
-def run_examples() -> int:
-    examples = [
-        "x = 14 + (contador * 2);",
-        "total = precio / 2.5 - descuento;",
-        "bandera = total >= limite;",
-        "promedio = (a + b) / 2.0;",
-        "x = 14 + ;",
-        "total = precio / ;",
-        "2x = a + b;",
-        "x = a == b;",
-    ]
-
-    for example in examples:
-        print("=" * 64)
-        print(example)
-        print_report(example)
-    return 0
-
-
 def main(argv: list[str]) -> int:
-    if len(argv) == 1:
-        return run_examples()
-
     if len(argv) != 2:
         print("Uso: python parser_little_duck.py [archivo_fuente]", file=sys.stderr)
         return 2

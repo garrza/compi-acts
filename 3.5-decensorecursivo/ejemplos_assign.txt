@@ -2,3 +2,7 @@ x = 14 + (contador * 2);
 total = precio / 2.5 - descuento;
 bandera = total >= limite;
 promedio = (a + b) / 2.0;
+x = 14 + ;
+total = precio / ;
+2x = a + b;
+x = a == b;
