@@ -1,53 +1,28 @@
 # Actividad 3.6 - Parser predictivo y parse tables
 
-Implementacion de un parser predictivo LL(1) para asignaciones de Little Duck.
-El proyecto incluye un tokenizer reducido, una parse table explicita, casos de
-prueba y pruebas unitarias. No se genera PDF en este directorio.
+Parser predictivo LL(1) para validar asignaciones de Little Duck. El directorio
+incluye solo el codigo fuente, los casos de prueba y estas notas para documentar
+la implementacion en el PDF.
 
 ## Archivos
 
-- `parser_predictivo_little_duck.py`: tokenizer, gramatica, conjuntos FIRST/FOLLOW, parse table y parser LL(1).
-- `casos_prueba.txt`: casos solicitados en la actividad.
-- `run_pruebas.py`: script que compara cada caso contra el resultado esperado.
-- `test_parser_predictivo.py`: pruebas unitarias con `unittest`.
-- `resultados_pruebas.txt`: salida capturada de `run_pruebas.py`.
-- `requirements.txt`: documenta que no hay dependencias externas.
+- `parser_predictivo_little_duck.py`: tokenizer reducido, FIRST/FOLLOW, parse table y parser predictivo.
+- `casos_prueba.txt`: casos solicitados por la actividad.
 
-## Entorno virtual
+## Como correrlo
 
 ```bash
 cd /Users/ramiro/Desktop/code/class-acts/compi-acts/3.6-parserpredictivo
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-```
-
-## Uso
-
-Ejecutar los casos de la actividad:
-
-```bash
 .venv/bin/python parser_predictivo_little_duck.py casos_prueba.txt
 ```
 
-Ver tambien los pasos de la pila predictiva:
+Tambien funciona sin argumento porque toma `casos_prueba.txt` por defecto:
 
 ```bash
-.venv/bin/python parser_predictivo_little_duck.py casos_prueba.txt --steps
+.venv/bin/python parser_predictivo_little_duck.py
 ```
 
-Ver salida de pruebas con resultado esperado:
-
-```bash
-.venv/bin/python run_pruebas.py
-```
-
-Ejecutar pruebas unitarias:
-
-```bash
-.venv/bin/python -m unittest -v
-```
-
-## Gramatica implementada
+## Gramatica
 
 ```text
 <ASSIGN>          ::= id = <EXPRESION> ;
@@ -101,9 +76,9 @@ Ejecutar pruebas unitarias:
 | `<SIGN>` | `{ id, cte_int, cte_float, cte_str }` |
 | `<VAR_CTE>` | `{ *, /, +, -, >, <, >=, <=, !=, ==, ;, ) }` |
 
-## Parse table resultante
+## Parse table
 
-Solo se listan las entradas no vacias. Las entradas no listadas son errores.
+Solo se listan entradas no vacias. Las entradas faltantes son errores.
 
 | No terminal | Lookahead | Produccion |
 |---|---|---|
@@ -135,11 +110,14 @@ Solo se listan las entradas no vacias. Las entradas no listadas son errores.
 | `<VAR_CTE>` | `cte_float` | `cte_float` |
 | `<VAR_CTE>` | `cte_str` | `cte_str` |
 
-## Notas para el PDF
+## Explicacion breve para el PDF
 
-Incluye la gramatica, las tablas FIRST/FOLLOW, la parse table anterior y una
-explicacion breve del codigo. Para resultados, usa la salida de:
+El tokenizer recorre cada linea, ignora espacios y comentarios, y aplica la
+coincidencia mas larga para reconocer constantes, identificadores, operadores,
+parentesis y `;`. Si no reconoce un simbolo, agrega un error lexico con linea y
+columna.
 
-```bash
-.venv/bin/python run_pruebas.py
-```
+El parser usa una pila inicial `EOF, <ASSIGN>`. Si el tope es terminal, debe
+coincidir con el token actual. Si el tope es no terminal, consulta la parse
+table con el lookahead y empuja la produccion encontrada en orden inverso. Una
+celda vacia de la tabla produce un error sintactico con los tokens esperados.

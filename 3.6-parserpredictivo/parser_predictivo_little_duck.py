@@ -31,13 +31,6 @@ class SyntaxErrorInfo:
     column: int
 
 
-@dataclass(frozen=True)
-class ParseStep:
-    stack_top: str
-    lookahead: str
-    action: str
-
-
 class Tokenizer:
     """Tokenizer reducido para los tokens usados por ASSIGN."""
 
@@ -296,7 +289,6 @@ class PredictiveParser:
         self.tokens = tokens
         self.position = 0
         self.errors: list[SyntaxErrorInfo] = []
-        self.steps: list[ParseStep] = []
 
     def parse(self) -> bool:
         stack = ["EOF", N_ASSIGN]
@@ -307,7 +299,6 @@ class PredictiveParser:
 
             if top in TERMINALS:
                 if top == current.type:
-                    self.record(top, current.type, f"match {display_token(top)}")
                     self.advance()
                 else:
                     self.add_error([top], current)
@@ -317,7 +308,6 @@ class PredictiveParser:
             if top in NON_TERMINALS:
                 production = PARSE_TABLE[top].get(current.type)
                 if production is None and current.type == "EOF" and EPSILON in FIRST[top]:
-                    self.record(top, current.type, format_production(top, ()))
                     continue
 
                 if production is None:
@@ -325,7 +315,6 @@ class PredictiveParser:
                     self.recover_non_terminal(top, stack)
                     continue
 
-                self.record(top, current.type, format_production(top, production))
                 for symbol in reversed(production):
                     stack.append(symbol)
                 continue
@@ -340,9 +329,6 @@ class PredictiveParser:
     def advance(self) -> None:
         if self.position < len(self.tokens) - 1:
             self.position += 1
-
-    def record(self, stack_top: str, lookahead: str, action: str) -> None:
-        self.steps.append(ParseStep(stack_top, lookahead, action))
 
     def add_error(self, expected_tokens: list[str] | set[str], received: Token) -> None:
         self.errors.append(
@@ -404,11 +390,6 @@ def format_expected(expected_tokens: list[str] | set[str]) -> str:
     return ", ".join(display_token(token) for token in ordered)
 
 
-def format_production(non_terminal: str, production: tuple[str, ...]) -> str:
-    right_side = " ".join(production) if production else EPSILON
-    return f"{non_terminal} -> {right_side}"
-
-
 def format_tokens(tokens: list[Token]) -> str:
     visible_tokens = [token for token in tokens if token.type != "EOF"]
     return "[ " + ", ".join(f"({t.type}, {t.value!r})" for t in visible_tokens) + " ]"
@@ -416,7 +397,7 @@ def format_tokens(tokens: list[Token]) -> str:
 
 def analizar(
     source: str,
-) -> tuple[list[Token], list[LexicalError], list[SyntaxErrorInfo], list[ParseStep]]:
+) -> tuple[list[Token], list[LexicalError], list[SyntaxErrorInfo]]:
     tokenizer = Tokenizer()
     tokens = tokenizer.tokenize(source)
 
@@ -424,11 +405,11 @@ def analizar(
     if not tokenizer.errors:
         parser.parse()
 
-    return tokens, tokenizer.errors, parser.errors, parser.steps
+    return tokens, tokenizer.errors, parser.errors
 
 
-def print_report(source: str, show_steps: bool = False) -> int:
-    tokens, lexical_errors, syntax_errors, steps = analizar(source)
+def print_report(source: str) -> int:
+    tokens, lexical_errors, syntax_errors = analizar(source)
 
     print("TOKEN STREAM")
     print(format_tokens(tokens))
@@ -441,15 +422,6 @@ def print_report(source: str, show_steps: bool = False) -> int:
                 f"simbolo no reconocido {error.symbol!r}"
             )
         return 1
-
-    if show_steps:
-        print("\nPASOS DEL PARSER")
-        for step in steps:
-            print(
-                f"pila: {step.stack_top:<20} "
-                f"lookahead: {display_token(step.lookahead):<15} "
-                f"accion: {step.action}"
-            )
 
     if syntax_errors:
         print("\nERRORES SINTACTICOS")
@@ -473,17 +445,18 @@ def load_cases(path: Path) -> list[str]:
 
 
 def main(argv: list[str]) -> int:
-    show_steps = "--steps" in argv
-    args = [arg for arg in argv[1:] if arg != "--steps"]
-
-    if len(args) > 1:
+    if len(argv) > 2:
         print(
-            "Uso: python parser_predictivo_little_duck.py [archivo] [--steps]",
+            "Uso: python parser_predictivo_little_duck.py [archivo]",
             file=sys.stderr,
         )
         return 2
 
-    source_path = Path(args[0]) if args else Path(__file__).with_name("casos_prueba.txt")
+    source_path = (
+        Path(argv[1])
+        if len(argv) == 2
+        else Path(__file__).with_name("casos_prueba.txt")
+    )
     if not source_path.is_file():
         print(f"Error: no se encontro el archivo {source_path}", file=sys.stderr)
         return 2
@@ -492,7 +465,7 @@ def main(argv: list[str]) -> int:
     for index, case in enumerate(cases, start=1):
         print("=" * 72)
         print(f"Caso {index}: {case}")
-        print_report(case, show_steps=show_steps)
+        print_report(case)
 
     return 0
 
