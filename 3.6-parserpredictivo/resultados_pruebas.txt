@@ -1,0 +1,66 @@
+========================================================================
+Caso 1: a = 7 + 4 + 5 ;
+Esperado: valida
+Resultado: valida
+Estado: OK
+========================================================================
+Caso 2: b = 12 / (3.0 + 3) ;
+Esperado: valida
+Resultado: valida
+Estado: OK
+========================================================================
+Caso 3: c = "hola " + "mundo";
+Esperado: valida
+Resultado: valida
+Estado: OK
+========================================================================
+Caso 4: d = 7 / 2 >= 12 - 20 + 1;
+Esperado: valida
+Resultado: valida
+Estado: OK
+========================================================================
+Caso 5: e = 2 * 2 * -2;
+Esperado: valida
+Resultado: valida
+Estado: OK
+========================================================================
+Caso 6: f = "hola" != "bye";
+Esperado: valida
+Resultado: valida
+Estado: OK
+========================================================================
+Caso 7: g = (x1 - x2) + (y1 - y2) ;
+Esperado: valida
+Resultado: valida
+Estado: OK
+========================================================================
+Caso 8: h = waa * waa - waa / -waa;
+Esperado: valida
+Resultado: valida
+Estado: OK
+========================================================================
+Caso 9: i = waa + ;
+Esperado: invalida
+Resultado: invalida
+Estado: OK
+Error sintactico: linea 1, columna 11, esperaba (, +, -, cte_float, cte_int, cte_str, id, recibio ;
+========================================================================
+Caso 10: i = -x  y;
+Esperado: invalida
+Resultado: invalida
+Estado: OK
+Error sintactico: linea 1, columna 9, esperaba !=, ), *, +, -, /, ;, <, <=, ==, >, >=, recibio id
+========================================================================
+Caso 11: i = 18.31416
+Esperado: invalida
+Resultado: invalida
+Estado: OK
+Error sintactico: linea 1, columna 13, esperaba ;, recibio fin de entrada
+========================================================================
+Caso 12: i = 56 * ( 7 - 1  ;
+Esperado: invalida
+Resultado: invalida
+Estado: OK
+Error sintactico: linea 1, columna 19, esperaba ), recibio ;
+========================================================================
+Resumen: 12/12 casos con resultado esperado
