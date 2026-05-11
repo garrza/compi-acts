@@ -1,0 +1,3 @@
+data/app.db
+data/raw/*.xlsx
+!data/raw/.gitkeep
