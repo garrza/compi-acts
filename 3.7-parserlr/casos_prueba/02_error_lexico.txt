@@ -1,0 +1,11 @@
+program lexico;
+
+var
+    a: int;
+
+main {
+    a = 5 @ 3;     # '@' no pertenece al alfabeto de Little Duck
+    a = a + 1;
+    print(a);
+}
+end
