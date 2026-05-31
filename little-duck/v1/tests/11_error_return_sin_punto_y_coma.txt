@@ -1,0 +1,16 @@
+program return_sin_punto_y_coma;
+
+var
+    r: int;
+
+int cinco() [
+    {
+        return 5
+    }
+];
+
+main {
+    r = cinco();
+    print(r);
+}
+end

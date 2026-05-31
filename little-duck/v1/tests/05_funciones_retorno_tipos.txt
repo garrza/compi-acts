@@ -1,0 +1,32 @@
+program retorno_tipos;
+
+var
+    n: int;
+    r: float;
+    s: string;
+
+int doble(x: int) [
+    {
+        return x + x;
+    }
+];
+
+float mitad(x: float) [
+    {
+        return x / 2.0;
+    }
+];
+
+string saludo(nombre: string) [
+    {
+        return nombre;
+    }
+];
+
+main {
+    n = doble(5);
+    r = mitad(9.0);
+    s = saludo("hola");
+    print(n, r, s);
+}
+end

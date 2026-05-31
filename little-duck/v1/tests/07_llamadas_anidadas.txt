@@ -1,0 +1,29 @@
+program llamadas_anidadas;
+
+var
+    a, n: int;
+
+int suma(x: int, y: int) [
+    {
+        return x + y;
+    }
+];
+
+int fact(n: int, a: int) [
+    {
+        return n * a;
+    }
+];
+
+main {
+    n = 4;
+
+    # resultado de una funcion pasado como argumento de otra (llamadas anidadas)
+    fact(n + 1, suma(n, 1));
+
+    # llamada anidada cuyo resultado se asigna y combina con aritmetica
+    a = suma(fact(n, 2), 3);
+
+    print(a);
+}
+end

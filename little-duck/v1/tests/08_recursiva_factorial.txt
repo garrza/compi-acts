@@ -1,0 +1,21 @@
+program recursiva_factorial;
+
+var
+    resultado: int;
+
+int factorial(n: int) [
+    {
+        if (n <= 1) {
+            return 1;
+        } else {
+            # llamada recursiva cuyo resultado se devuelve dentro de una expresion
+            return n * factorial(n - 1);
+        };
+    }
+];
+
+main {
+    resultado = factorial(5);
+    print("factorial:", resultado);
+}
+end

@@ -1,0 +1,31 @@
+program resultado_en_expresion;
+
+var
+    a, b, c: int;
+
+int suma(x: int, y: int) [
+    {
+        return x + y;
+    }
+];
+
+main {
+    a = 3;
+    b = 4;
+
+    # resultado de la llamada usado dentro de una expresion aritmetica
+    c = suma(a, b) + 1;
+
+    # resultado de la llamada usado dentro de una expresion relacional
+    if (suma(a, b) > 10) {
+        print("mayor");
+    } else {
+        print("menor o igual");
+    };
+
+    # mezcla de aritmetica y relacional con dos llamadas
+    if (suma(a, b) * 2 >= suma(c, 1)) {
+        print(c);
+    };
+}
+end

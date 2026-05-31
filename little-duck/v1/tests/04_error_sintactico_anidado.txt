@@ -1,0 +1,20 @@
+program anidado;
+
+var
+    a, b: int;
+
+main {
+    a = 0;
+    do {
+        if (a < 10) {
+            a = a +;            # falta operando despues de '+'
+            print(a);
+        } else {
+            a = a - 1;
+        };
+    } while (a < 10);
+
+    b = a * 2;
+    print("fin:", b);
+}
+end

@@ -1,0 +1,14 @@
+program var_duplicado;
+
+var
+    a, b: int;
+var
+    c: float;
+
+main {
+    a = 1;
+    b = 2;
+    c = 3.0;
+    print(a, b, c);
+}
+end
