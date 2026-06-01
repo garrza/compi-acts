@@ -1,0 +1,14 @@
+program err_retorno;
+var
+    r: int;
+
+int donde() [
+    {
+        return "texto";
+    }
+];
+
+main {
+    r = donde();
+}
+end

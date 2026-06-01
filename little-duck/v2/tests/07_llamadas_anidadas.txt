@@ -1,0 +1,22 @@
+program llamadas_anidadas;
+var
+    a, n: int;
+
+int suma(x: int, y: int) [
+    {
+        return x + y;
+    }
+];
+
+int prod(x: int, y: int) [
+    {
+        return x * y;
+    }
+];
+
+main {
+    n = 4;
+    a = prod(suma(n, 1), 2);
+    print(a);
+}
+end

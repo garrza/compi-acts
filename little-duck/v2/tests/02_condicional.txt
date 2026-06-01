@@ -1,0 +1,13 @@
+program condicional;
+var
+    a, b: int;
+main {
+    a = 5;
+    b = 10;
+    if (a < b) {
+        print("menor");
+    } else {
+        print("mayor o igual");
+    };
+}
+end

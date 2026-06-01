@@ -1,0 +1,10 @@
+program err_cond_if;
+var
+    a: int;
+main {
+    a = 5;
+    if (a + 1) {
+        print(a);
+    };
+}
+end

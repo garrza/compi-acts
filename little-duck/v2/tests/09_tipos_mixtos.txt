@@ -1,0 +1,20 @@
+program tipos_mixtos;
+var
+    n: int;
+    prom: float;
+    msg: string;
+
+float mitad(x: float) [
+    {
+        return x / 2.0;
+    }
+];
+
+main {
+    n = 7;
+    prom = (n + 1) / 2.0;
+    prom = mitad(9.0);
+    msg = "promedio";
+    print(msg, prom);
+}
+end

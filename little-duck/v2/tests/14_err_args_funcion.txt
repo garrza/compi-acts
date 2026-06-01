@@ -1,0 +1,14 @@
+program err_args;
+var
+    r: int;
+
+int suma(x: int, y: int) [
+    {
+        return x + y;
+    }
+];
+
+main {
+    r = suma(1);
+}
+end

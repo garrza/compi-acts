@@ -1,0 +1,14 @@
+program err_void_expr;
+var
+    r: int;
+
+void nada() [
+    {
+        return;
+    }
+];
+
+main {
+    r = nada() + 1;
+}
+end

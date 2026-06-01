@@ -1,0 +1,14 @@
+program err_falta_punto;
+var
+    r: int;
+
+int identidad(x: int) [
+    {
+        return x;
+    }
+]
+
+main {
+    r = identidad(7);
+}
+end

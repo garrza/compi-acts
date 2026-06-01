@@ -1,0 +1,15 @@
+program err_void_ret;
+var
+    a: int;
+
+void hace() [
+    {
+        return 5;
+    }
+];
+
+main {
+    a = 1;
+    hace();
+}
+end

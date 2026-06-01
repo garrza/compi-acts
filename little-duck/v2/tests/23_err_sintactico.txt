@@ -1,0 +1,8 @@
+program err_sintactico;
+var
+    a: int;
+main {
+    a = 5
+    print(a);
+}
+end

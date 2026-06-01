@@ -1,0 +1,8 @@
+program err_break;
+var
+    a: int;
+main {
+    a = 1;
+    break;
+}
+end

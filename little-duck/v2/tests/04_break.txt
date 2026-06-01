@@ -1,0 +1,15 @@
+program con_break;
+var
+    i: int;
+main {
+    i = 0;
+    do {
+        i = i + 1;
+        if (i == 3) {
+            break;
+        };
+        print(i);
+    } while (i < 10);
+    print("fin");
+}
+end

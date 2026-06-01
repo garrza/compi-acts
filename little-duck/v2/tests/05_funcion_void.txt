@@ -1,0 +1,22 @@
+program funcion_void;
+var
+    x: int;
+
+void saluda(veces: int) [
+    var
+        i: int;
+    {
+        i = 0;
+        do {
+            print("hola");
+            i = i + 1;
+        } while (i < veces);
+        return;
+    }
+];
+
+main {
+    x = 3;
+    saluda(x);
+}
+end

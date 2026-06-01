@@ -1,0 +1,7 @@
+program err_redecl;
+var
+    a, a: int;
+main {
+    a = 1;
+}
+end

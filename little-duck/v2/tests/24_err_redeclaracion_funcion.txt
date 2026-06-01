@@ -1,0 +1,20 @@
+program err_redecl_func;
+var
+    r: int;
+
+int doble(x: int) [
+    {
+        return x + x;
+    }
+];
+
+int doble(y: int) [
+    {
+        return y * 2;
+    }
+];
+
+main {
+    r = doble(3);
+}
+end

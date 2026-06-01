@@ -1,0 +1,10 @@
+program err_tipos;
+var
+    n: int;
+    s: string;
+main {
+    n = 1;
+    s = "hola";
+    n = n + s;
+}
+end

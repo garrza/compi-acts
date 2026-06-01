@@ -1,0 +1,7 @@
+program err_lexico;
+var
+    a: int;
+main {
+    a = 5 @ 3;
+}
+end

@@ -1,0 +1,17 @@
+program funcion_retorno;
+var
+    a, b, r: int;
+
+int suma(x: int, y: int) [
+    {
+        return x + y;
+    }
+];
+
+main {
+    a = 4;
+    b = 6;
+    r = suma(a, b) + 1;
+    print(r);
+}
+end

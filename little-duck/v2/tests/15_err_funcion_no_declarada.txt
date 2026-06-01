@@ -1,0 +1,7 @@
+program err_func_nd;
+var
+    r: int;
+main {
+    r = triple(3);
+}
+end

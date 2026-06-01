@@ -1,0 +1,8 @@
+program err_no_declarada;
+var
+    a: int;
+main {
+    a = 1;
+    b = a + 2;
+}
+end
